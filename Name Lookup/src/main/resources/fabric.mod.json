@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "name_lookup",
+  "version": "${version}",
+  "name": "Name Lookup",
+  "description": "This mod allows you to look up a player's username history with the use of /namelookup.",
+  "authors": [
+    "SmushyTaco"
+  ],
+  "contact": {
+    "homepage": "https://www.smushytaco.com/",
+    "issues": "https://www.curseforge.com/minecraft/mc-mods/name-lookup/issues/",
+    "sources": "https://github.com/realSmushyTaco/Name-Lookup/"
+  },
+  "license": "GNU Lesser General Public License version 3 (LGPLv3)",
+  "icon": "assets/name_lookup/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "com.smushytaco.name_lookup.NameLookup"
+      }
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "fabric-language-kotlin": ">=1.6.0+kotlin.1.5.0"
+  }
+}
