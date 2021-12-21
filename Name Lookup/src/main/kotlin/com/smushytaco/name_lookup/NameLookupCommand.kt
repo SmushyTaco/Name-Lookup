@@ -32,7 +32,7 @@ object NameLookupCommand: Command<FabricClientCommandSource> {
                     val calendar = Calendar.getInstance()
                     calendar.timeInMillis = it
                     val date = LocalDateTime.ofInstant(calendar.toInstant(), calendar.timeZone.toZoneId())
-                    val finalDate = "${date.monthValue}/${date.dayOfMonth}/${date.year}, ${if (date.hour > 12) date.hour - 12 else date.hour}:${if (date.minute < 10) "0" else ""}${date.minute}:${if (date.second < 10) "0" else ""}${date.second} ${if (date.hour >= 12) "PM" else "AM"}"
+                    val finalDate = "${date.monthValue}/${date.dayOfMonth}/${date.year}§3, §b${if (date.hour > 12) date.hour - 12 else date.hour}:${if (date.minute < 10) "0" else ""}${date.minute}:${if (date.second < 10) "0" else ""}${date.second} ${if (date.hour >= 12) "PM" else "AM"}"
                     stringBuilder.append("§3, §b$finalDate")
                 }
                 player.sendMessage(Text.of(stringBuilder.toString()), false)

@@ -10,7 +10,7 @@
   "contact": {
     "homepage": "https://www.smushytaco.com/",
     "issues": "https://www.curseforge.com/minecraft/mc-mods/name-lookup/issues/",
-    "sources": "https://github.com/realSmushyTaco/Name-Lookup/"
+    "sources": "https://github.com/SmushyTaco/Name-Lookup/"
   },
   "license": "GNU Lesser General Public License version 3 (LGPLv3)",
   "icon": "assets/name_lookup/icon.png",
@@ -24,9 +24,10 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.12.12",
     "fabric": "*",
-    "fabric-language-kotlin": ">=1.6.1+kotlin.1.5.10",
-    "minecraft": "1.17.x"
+    "fabric-language-kotlin": ">=1.7.1+kotlin.1.6.10",
+    "minecraft": "1.18.x",
+    "java": ">=17"
   }
 }
