@@ -14,20 +14,26 @@
   },
   "license": "GNU Lesser General Public License version 3 (LGPLv3)",
   "icon": "assets/name_lookup/icon.png",
-  "environment": "client",
+  "environment": "*",
   "entrypoints": {
     "client": [
       {
         "adapter": "kotlin",
-        "value": "com.smushytaco.name_lookup.NameLookup"
+        "value": "com.smushytaco.name_lookup.NameLookupClient"
+      }
+    ],
+    "server": [
+      {
+        "adapter": "kotlin",
+        "value": "com.smushytaco.name_lookup.NameLookupServer"
       }
     ]
   },
   "depends": {
-    "fabricloader": ">=0.12.12",
-    "fabric": "*",
-    "fabric-language-kotlin": ">=1.7.1+kotlin.1.6.10",
-    "minecraft": "1.18.x",
+    "fabricloader": ">=0.14.9",
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=1.8.2+kotlin.1.7.10",
+    "minecraft": "~1.19",
     "java": ">=17"
   }
 }
