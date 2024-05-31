@@ -1,13 +1,13 @@
 package com.smushytaco.name_lookup.mojang_api_parser
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
-import java.net.URL
+import java.net.URI
 import java.util.*
 object UsernameInformation {
     val UUID.usernameHistory: List<UsernameStructure>?
         get() {
             return try {
-                val string = URL("https://api.mojang.com/user/profiles/$this/names").readText()
+                val string = URI("https://api.mojang.com/user/profiles/$this/names").toURL().readText()
                 Json.decodeFromString(ListSerializer(UsernameStructure.serializer()), string)
             } catch (exception: Exception) {
                 null
@@ -16,7 +16,7 @@ object UsernameInformation {
     val String.currentUsernameInformation: NameToUUIDStructure?
         get() {
             return try {
-                val string = URL("https://api.mojang.com/users/profiles/minecraft/$this").readText()
+                val string = URI("https://api.mojang.com/users/profiles/minecraft/$this").toURL().readText()
                 Json.decodeFromString(NameToUUIDStructure.serializer(), string)
             } catch (exception: Exception) {
                 null
