@@ -30,7 +30,7 @@ object NameLookup {
         }
     }
     fun MutableText.copySupport(copyString: String, hoverText: Text): MutableText {
-        style = style.withClickEvent(ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, copyString)).withHoverEvent(HoverEvent(HoverEvent.Action.SHOW_TEXT, hoverText))
+        style = style.withClickEvent(ClickEvent.CopyToClipboard(copyString)).withHoverEvent(HoverEvent.ShowText(hoverText))
         return this
     }
     inline fun <reified T> nameLookupCommand(context: CommandContext<T>, name: String) where T: CommandSource {

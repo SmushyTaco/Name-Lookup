@@ -9,7 +9,7 @@ object UsernameInformation {
             return try {
                 val string = URI("https://api.mojang.com/user/profiles/$this/names").toURL().readText()
                 Json.decodeFromString(ListSerializer(UsernameStructure.serializer()), string)
-            } catch (exception: Exception) {
+            } catch (_: Exception) {
                 null
             }
         }
@@ -18,7 +18,7 @@ object UsernameInformation {
             return try {
                 val string = URI("https://api.mojang.com/users/profiles/minecraft/$this").toURL().readText()
                 Json.decodeFromString(NameToUUIDStructure.serializer(), string)
-            } catch (exception: Exception) {
+            } catch (_: Exception) {
                 null
             }
         }
