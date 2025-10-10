@@ -88,7 +88,6 @@ tasks {
                 )
             )
         }
-        filesMatching("*.mixins.json") { expand(mapOf("java" to stringJavaVersion)) }
     }
     java {
         toolchain.languageVersion = JavaLanguageVersion.of(javaVersion.get())
