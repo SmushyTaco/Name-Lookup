@@ -12,7 +12,7 @@
     "issues": "https://www.curseforge.com/minecraft/mc-mods/name-lookup/issues/",
     "sources": "https://github.com/SmushyTaco/Name-Lookup/"
   },
-  "license": "GNU Lesser General Public License version 3 (LGPLv3)",
+  "license": "Apache-2.0",
   "icon": "assets/name_lookup/icon.png",
   "environment": "*",
   "entrypoints": {
