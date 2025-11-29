@@ -6,10 +6,10 @@ import com.smushytaco.name_lookup.NameLookup.STRING_ARGUMENT_KEY
 import com.smushytaco.name_lookup.NameLookup.nameLookupCommand
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
-import net.minecraft.server.command.ServerCommandSource
+import net.minecraft.commands.CommandSourceStack
 @Environment(EnvType.SERVER)
-object NameLookupServerCommand: Command<ServerCommandSource> {
-    override fun run(context: CommandContext<ServerCommandSource>): Int {
+object NameLookupServerCommand: Command<CommandSourceStack> {
+    override fun run(context: CommandContext<CommandSourceStack>): Int {
         nameLookupCommand(context, StringArgumentType.getString(context, STRING_ARGUMENT_KEY))
         return 0
     }

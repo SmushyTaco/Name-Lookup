@@ -9,7 +9,7 @@ import net.fabricmc.api.Environment
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.literal
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
-import net.minecraft.command.CommandSource
+import net.minecraft.commands.SharedSuggestionProvider
 @Suppress("UNUSED")
 @Environment(EnvType.CLIENT)
 object NameLookupClient : ClientModInitializer {
@@ -19,7 +19,7 @@ object NameLookupClient : ClientModInitializer {
                 .then(ClientCommandManager.argument(STRING_ARGUMENT_KEY, StringArgumentType.word())
                     .suggests { context, builder ->
                         @Suppress("UNCHECKED_CAST")
-                        NameLookupSuggestionProvider.getSuggestions(context as CommandContext<CommandSource>, builder)
+                        NameLookupSuggestionProvider.getSuggestions(context as CommandContext<SharedSuggestionProvider>, builder)
                     }
                     .executes(NameLookupClientCommand)))
         })
