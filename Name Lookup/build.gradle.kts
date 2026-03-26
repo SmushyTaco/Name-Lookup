@@ -16,10 +16,9 @@ version = modVersion.get()
 group = mavenGroup.get()
 dependencies {
     minecraft(libs.minecraft)
-    mappings(loom.officialMojangMappings())
-    modImplementation(libs.loader)
-    modImplementation(libs.fabric.api)
-    modImplementation(libs.fabric.language.kotlin)
+    implementation(libs.loader)
+    implementation(libs.fabric.api)
+    implementation(libs.fabric.language.kotlin)
 }
 java {
     toolchain {

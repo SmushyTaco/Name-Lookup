@@ -22,14 +22,18 @@ object NameLookup {
             @Suppress("UNCHECKED_CAST")
             this as CommandContext<CommandSourceStack>
             if (source.player != null) {
-                source.player?.displayClientMessage(message, overlay)
+                source.player?.sendSystemMessage(message, overlay)
             } else {
                 source.sendSystemMessage(message)
             }
         } else if (T::class can FabricClientCommandSource::class) {
             @Suppress("UNCHECKED_CAST")
             this as CommandContext<FabricClientCommandSource>
-            source.player.displayClientMessage(message, overlay)
+            if (overlay) {
+                source.player.sendOverlayMessage(message)
+            } else {
+                source.player.sendSystemMessage(message)
+            }
         }
     }
     fun MutableComponent.copySupport(copyString: String, hoverText: Component): MutableComponent {
